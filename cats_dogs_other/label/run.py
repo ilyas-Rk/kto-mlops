@@ -11,6 +11,7 @@ parser.add_argument("--jwt_token", type=str)
 args = parser.parse_args()
 jwt_token = args.jwt_token
 
+
 if __name__ == "__main__":
     # Préparation du dataset
     raw_folder = "cats_dogs_other/label/dataset/_raw"
@@ -19,7 +20,7 @@ if __name__ == "__main__":
         res = extract_images(raw_folder, postprocess_folder)
         print("files input = " + str(res.number_files_input))
         print("files output = " + str(res.number_images_output))
-    
+
     # Initialisation du projet ecotag
     api_url = 'http://localhost:5010/api/server'
     api_information = ApiInformation(api_url=api_url, jwt_token=jwt_token)
